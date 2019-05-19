@@ -2,83 +2,85 @@ package com.stackroute.pe3;
 
 public class CompareArrays {
 
-    public String isComp(String[] x,String[] y)
+    //This method compares the two arrays.
+    public String compareArrays(String[] array1,String[] array2)
     {
-        String res="";
+        String result="";
 
-        if(x.length==y.length)
+        //this condition compares the lengths of two arrays.
+        if(array1.length==array1.length)
         {
-            for(int i=0;i<x.length;i++)
+            for(int i=0;i<array1.length;i++)
             {
-                if(x[i]==y[i]){
-                    res="equal";
+                if(array1[i]==array1[i]){
+                    result="Both the arrays are equal";
                 }
                 else
                 {
-                    res="not equal";
+                    result="Arrays are not equal";
                     break;
                 }
             }
 
         }
         else{
-            res="not equal";
-        }
+                result="Arrays are not equal";
+            }
 
-        return res;
+        return result;
     }
 
-    public String isDupli(String[] x)
+    //This method eleminates duplicate values in the array and returns array.
+    public String checkDuplicateValuesInArray(String[] array)
     {
-        String res="";
-        for(int i=0;i<x.length;i++)
+        String result="";
+        for(int i=0;i<array.length;i++)
         {
-            for(int j=1;j<x.length;j++)
+            for(int j=1;j<array.length;j++)
             {
-                if(x[i]==x[j]){
-                    res="duplicates found";
-
+                if(array[i]==array[j])
+                {
+                    result="duplicate values are found";
                     break;
 
                 }
                 else{
 
-                    res="no duplicates";
+                    result="no duplicate values found";
                 }
             }
         }
 
-        return res;
+        return result;
     }
 
-
-    public String[] isAppen(String[] x,String[] y)
+    //This method returns append array.
+    public String[] appendTwoArrays(String[] array1,String[] array2)
     {
-        String[] res=new String[x.length+1];
-        for(int i=0;i<x.length;i++)
+        String[] result=new String[array1.length+1];
+        for(int i=0;i<array1.length;i++)
         {
-            res[i]=x[i];
+            result[i]=array1[i];
 
         }
-        res[res.length-1]=y[0];
+        result[result.length-1]=array2[0];
 
-        return res;
+        return result;
     }
 
-
-    public String[] isPrepen(String[] x,String[] y)
+    //This method prepend the arrays
+    public String[] prependTwoArrays(String[] array1,String[] array2)
     {
-        String[] res=new String[x.length+1];
-        String temp=y[y.length/2];
-        for(int i=0,j=1;i<x.length&&j<res.length;i++,j++)
+        String[] result=new String[array1.length+1];
+        String temp=array2[array2.length/2];
+        for(int i=0,j=1;i<array1.length&&j<result.length;i++,j++)
         {
 
-            res[j]=x[i];
+            result[j]=array1[i];
 
         }
 
-        res[0]=temp;
-
-        return res;
+        result[0]=temp;
+        return result;
     }
 }

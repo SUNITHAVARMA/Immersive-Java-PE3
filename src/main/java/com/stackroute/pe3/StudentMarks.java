@@ -5,20 +5,20 @@ import java.util.*;
 
 
 public class StudentMarks {
-
-    public String isComp(int a) {
-        String res = "";
-        if ((a >= 0) && (a <= 100)) {
-            res = "true";
+    //This method gives statements based on conditions.
+    public String compareStudentMarks(int input) {
+        String result = "";
+        if ((input >= 0) && (input <= 100)) {
+            result = "true";
 
         }
-        if (a > 100) {
-            res = "Input should not be greater than 100";
+        if (input > 100) {
+            result = "Input should not be greater than 100";
         }
-        if (a < 0) {
-            res = "Input should not be less than 0";
+        if (input < 0) {
+            result = "Input should not be less than 0";
         }
 
-        return res;
+        return result;
     }
 }

@@ -6,15 +6,12 @@ import java.util.regex.Pattern;
 
 public class RemoveVowels {
 
-
-
+    //This method returns the removed vowels string
     public  String[] removeVowelsInString(String[] querystring) {
     String[] words = new String[querystring.length];
-
-
-
     for (int i = 0; i <querystring.length; i++) {
         if (querystring[i] != null) {
+            //This statements gives remove all vowels in the string.
             words[i] = querystring[i].replaceAll("[aeiou]", "");
             if(querystring[i].matches(".*\\d.*")){
                 return "digits are not allowed".split(",");
@@ -26,8 +23,5 @@ public class RemoveVowels {
 
     }
     return words;
-
-
-
-}
+    }
 }

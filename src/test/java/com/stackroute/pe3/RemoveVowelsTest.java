@@ -36,11 +36,5 @@ public class RemoveVowelsTest {
                 " check if digits in the string",
               new String[]{"digits are not allowed"},removeVowels.removeVowelsInString(new String[]{"India","Ja123","japan"}));
          assertEquals("check if empty strings in the array or not",new String[]{"empty strings are not allowed"},removeVowels.removeVowelsInString(new String[]{"India","","japan"}));
-
-
-
-
     }
-
-
 }

@@ -7,29 +7,35 @@ import static org.junit.Assert.assertArrayEquals;
 
 public class CheckPrimeEvenOddTest
 {
-    CheckPrimeEvenOdd p;
+    CheckPrimeEvenOdd primeNumber;
 
     @Before
     public void setup()
     {
-        //arrenge
-        p = new CheckPrimeEvenOdd();
+        // This methods runs, before running any one of the test case
+        // This method is used to initialize the required variables
+        primeNumber = new CheckPrimeEvenOdd();
     }
 
     @After
     public void tearDown()
     {
-        //arrenge
-        p= null;
+        // This method runs, after running all the test cases
+        // This method is used to clear the initialized variables
+        primeNumber= null;
     }
 
     @Test
-    public void evenOddTest() throws Exception
+    public void numberIsEvenOrOddTest() throws Exception
     {
 
         int[] arr = {4, 3, 7, 8};
-        String[] result = p.evenOdd(arr);
+
+        //This statement returns numbers either even or odd.
+        String[] result = primeNumber.checkNumberEvenOrOdd(arr);
         String[] expected = {"even", "odd", "odd", "even"};
+
+        //This method checks actual result with expected output.
         assertArrayEquals(expected, result);
 
     }
@@ -38,8 +44,12 @@ public class CheckPrimeEvenOddTest
     {
 
         int[] arr = {4, 3, 7, 8,4};
-        int [] result = p.reversearray(arr);
+
+        //This statement returns the reversed array elements.
+        int [] result = primeNumber.reverseArrayElements(arr);
         int [] expected = {4,8,7,3,4};
+
+        //This method check actual output with expected output.
         assertArrayEquals(expected, result);
 
     }
@@ -47,8 +57,12 @@ public class CheckPrimeEvenOddTest
     public void removePrimeTest() throws Exception
     {
         int[] arr = {3, 12, 7, 8};
-        int[] result = p.removePrime(arr);
+
+        //This statement returns array contains removed prime number.
+        int[] result = primeNumber.removePrimeNumbersInArray(arr);
         int[] expected = {12,8};
+
+        //This method checks the actual output with expected output.
         assertArrayEquals(result, expected);
 
     }

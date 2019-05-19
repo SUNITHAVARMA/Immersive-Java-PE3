@@ -2,13 +2,13 @@ package com.stackroute.pe3;
 
 public class CheckPrimeEvenOdd
 {
-
-    public String[] evenOdd(int a[])
+    /*This method returns the prime numbers and checks every number even or odd*/
+    public String[] checkNumberEvenOrOdd(int input[])
     {
-        String[] result = new String[a.length];
-        for(int i=0; i< a.length; i++)
+        String[] result = new String[input.length];
+        for(int i=0; i< input.length; i++)
         {
-            if(a[i]%2 == 0)
+            if(input[i]%2 == 0)
             {
                 result[i] ="even";
             }
@@ -20,44 +20,44 @@ public class CheckPrimeEvenOdd
         return result;
     }
 
-    public int[] reversearray(int a[])
+    /*This method returns the array elements in reverse order*/
+    public int[] reverseArrayElements(int input[])
 
-    {   int b[]=new int[a.length];
+    {   int b[]=new int[input.length];
         int i;
         int j=0;
-        for (i=(a.length)-1;i>=0;i--)
+        for (i=(input.length)-1;i>=0;i--)
         {
-            b[j]+=a[i];
+            b[j]+=input[i];
             j++;
         }
         System.out.println(b);
         return b;
     }
-    public int [] removePrime(int arr[]) {
+
+    /*This method returns the removed prime numbers array*/
+    public int [] removePrimeNumbersInArray(int input[]) {
 
         int i = 0;
         int j = 0;
         int k = 0;
-        int countc = 0;
-        int countp = 0;
-
-        for(i = 0; i < arr.length; i++){
-
-
-            if(isPrime(arr[i]))
-                countp++;
+        int countCompositeNumber = 0;
+        int countPrimeNumber = 0;
+        for(i = 0; i < input.length; i++){
+            if(isPrime(input[i]))
+                countPrimeNumber++;
             else
-                countc++;
+                countCompositeNumber++;
         }
-        int prim[] = new int[countp];
-        int com[] = new int[countc];
-        for(i = 0; i < arr.length; i++){
-            if(isPrime(arr[i]))
-                prim[j++] = arr[i];
+        int prim[] = new int[countPrimeNumber];
+        int com[] = new int[countCompositeNumber];
+        for(i = 0; i < input.length; i++){
+            if(isPrime(input[i]))
+                prim[j++] = input[i];
             else
 
 
-                com[k++] = arr[i];
+                com[k++] = input[i];
         }
         System.out.println("Prime Numbers:");
         for(i = 0; i < prim.length; i++)
@@ -75,7 +75,10 @@ public class CheckPrimeEvenOdd
         }
         return result;
     }
-    public static boolean isPrime(int n){
+
+    /*This method returns the number is prime number or not*/
+    public static boolean isPrime(int n)
+    {
         int f = 0;
         for(int i = 1; i <= n; i++)
             if(n % i == 0)
@@ -84,6 +87,4 @@ public class CheckPrimeEvenOdd
             return true;
         return false;
     }
-
-
 }
